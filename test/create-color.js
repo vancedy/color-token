@@ -14,15 +14,12 @@ describe("Token Contract", function(){
         [owner, alice, bob] = await ethers.getSigners();
     })
 
-
-
     describe('deployment', () => {
         it("should retrieve basic information", async function() {
             expect(await color.name()).to.equal("Color");
             expect(await color.symbol()).to.equal("CLR");
         });
     
-
         it("should create a new color and get its tokenURI", async function() {
             const tokenURL = "https://google.com"
             await color.createCollectible("#FFFFF", tokenURL)                
@@ -35,14 +32,8 @@ describe("Token Contract", function(){
             await color.createCollectible("#FFFFF", tokenURL)
             await color.connect(owner).approve(alice.getAddress(), 0)
             await color.connect(alice).transferFrom(owner.getAddress(), alice.getAddress(), 0)
-
             expect(await color.ownerOf(0)).to.equal(aliceAddress)
         });
-
-        
-        
-
-
 
     })
     

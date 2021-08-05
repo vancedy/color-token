@@ -4,6 +4,5 @@
 {
     "name": "color", 
     "description": "a special shade of maroon", 
-    "image": "",
-     
+    "image": "some url that links to the IPFS addressed image",    
 }
